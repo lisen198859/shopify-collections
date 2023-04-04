@@ -55,7 +55,7 @@ export default {
             }
             return ''
           })
-          that.url = that.url + '&q=' + that.turnTimestamp(new Date().toLocaleDateString())
+          that.url = that.url + '&q=' + that.turnTimestamp()
         } else {
           console.log('error submit!!')
           return false
@@ -77,9 +77,8 @@ export default {
         key: Date.now()
       })
     },
-    turnTimestamp (date) {
-      const timestamp = Math.floor(new Date(date) / 1000)
-      return timestamp
+    turnTimestamp () {
+      return Math.floor(Date.now() / 1000)
     }
   }
 }
